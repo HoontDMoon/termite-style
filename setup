@@ -32,17 +32,18 @@ fi
 # User Config
 cp $HOME/.config/termite/config $HOME/.config/termite/config.user
 
-sudo mkdir /usr/share/termite-style/
-sudo mkdir /usr/share/fonts/tsf/
+mkdir $HOME/.local/share/termite-style/
 
-sudo cp -r $DIR/colors /usr/share/termite-style/
-sudo cp -r $DIR/fonts/* /usr/share/fonts/tsf/
-sudo cp -r $DIR/theme /usr/share/termite-style/
+mkdir $HOME/.local/share/fonts/tsf/
 
-sudo chmod +x /usr/share/termite-style/theme
-sudo fc-cache
-sudo ln -s /usr/share/termite-style/theme /usr/bin/termite-style
+cp -r $DIR/colors $HOME/.local/share/termite-style/
+cp -r $DIR/fonts/* $HOME/.local/share/fonts/tsf/
+cp -r $DIR/theme $HOME/.local/share/termite-style/
 
+chmod +x $HOME/.local/share/termite-style/theme
+fc-cache
+# sudo ln -s /usr/share/termite-style/theme /usr/bin/termite-style
+ln -s $HOME/.local/share/termite-style/theme $HOME/bin/termite-style
 echo -e $G"   [*] Setup Completed."
 echo
 echo -e $Y"   [*] Now You Can Run This Program By Just typing 'termite-style'."

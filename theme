@@ -4,7 +4,7 @@
 ## Author : Aditya Shakya
 
 ## Directories
-PREFIX="/usr"
+PREFIX="$HOME/.local"
 TDIR="$HOME/.config/termite"
 CDIR="$PREFIX/share/termite-style/colors"
 FDIR="$PREFIX/share/termite-style/fonts"
